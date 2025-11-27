@@ -1,0 +1,20 @@
+<%- include('partials/header', { title: 'Predict' }) %>
+
+    <section class="page">
+        <h2>Upload ECG & Get Mock Prediction</h2>
+
+        <form id="predict-form" class="upload-form">
+            <label class="file-label">Choose ECG file (.csv, .wav, .txt)</label>
+            <input type="file" name="ecgfile" id="ecgfile" accept=".csv,.wav,.txt" required />
+            <button class="btn primary" type="submit">Upload & Predict</button>
+        </form>
+
+        <div id="prediction-result" class="card result-card" style="display:none">
+            <h3>Prediction</h3>
+            <p><strong>Class:</strong> <span id="pred-class"></span></p>
+            <p><strong>Confidence:</strong> <span id="pred-conf"></span></p>
+            <p><strong>Filename:</strong> <span id="pred-file"></span></p>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

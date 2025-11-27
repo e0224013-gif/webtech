@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        <%= title || 'ECG AI Project' %>
+    </title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script defer src="/public/js/main.js"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">ECG AI</a>
+            <nav class="main-nav">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/objectives">Objectives</a>
+                <a href="/techniques">Techniques</a>
+                <a href="/implementation">Implementation</a>
+                <a href="/results">Results</a>
+                <a href="/predict">Predict</a>
+                <a href="/conclusion">Conclusion</a>
+                <a href="/references">References</a>
+            </nav>
+            <div class="header-auth">
+                <% if (user) { %>
+                    <span class="user-welcome">Welcome, <%= user %>!</span>
+                    <a href="/auth/logout" class="btn ghost">Logout</a>
+                    <% } else { %>
+                        <a href="/auth/login" class="btn ghost">Login</a>
+                        <a href="/auth/register" class="btn primary" style="margin-left:0.5rem">Register</a>
+                        <% } %>
+            </div>
+        </div>
+    </header>
+    <main class="site-main container">

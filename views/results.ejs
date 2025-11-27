@@ -1,0 +1,53 @@
+<%- include('partials/header', { title: 'Results' }) %>
+
+    <section class="page">
+        <h2>Results</h2>
+        <div class="controls" style="display:flex;gap:.5rem;align-items:center;margin-bottom:1rem">
+            <label for="generate-count" style="font-weight:600">Generate samples:</label>
+            <input id="generate-count" type="number" min="1" max="500" value="10"
+                style="width:100px;padding:.4rem;border-radius:6px;border:1px solid #d7e9f8" />
+            <button id="generate-btn" class="btn primary">Generate Data</button>
+            <button id="refresh-btn" class="btn"
+                style="background:#fff;border:1px solid #d1e8ff;color:var(--primary)">Refresh</button>
+        </div>
+        <div class="cards-grid">
+            <div class="card chart">
+                <h4>Accuracy</h4>
+                <div class="chart-placeholder">[Accuracy Graph Placeholder]</div>
+            </div>
+            <div class="card chart">
+                <h4>Loss</h4>
+                <div class="chart-placeholder">[Loss Graph Placeholder]</div>
+            </div>
+            <div class="card chart">
+                <h4>Confusion Matrix</h4>
+                <div class="chart-placeholder">[Confusion Matrix Placeholder]</div>
+            </div>
+        </div>
+
+        <h3>Sample Predictions</h3>
+        <div id="predictions-container" class="predictions-list">
+            <% if (recent && recent.length) { %>
+                <% recent.forEach(function(p) { %>
+                    <div class="prediction-row">
+                        <div><strong>
+                                <%= p.filename %>
+                            </strong></div>
+                        <div>
+                            <%= p.predictedClass %>
+                        </div>
+                        <div>
+                            <%= p.confidence %>
+                        </div>
+                        <div>
+                            <%= new Date(p.uploadDate).toLocaleString() %>
+                        </div>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p>No predictions yet. Upload an ECG to get started.</p>
+                            <% } %>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

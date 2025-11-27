@@ -1,0 +1,36 @@
+<%- include('partials/header', { title: 'Heart Arrhythmia Classification' }) %>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Heart Arrhythmia Classification Using ECG + AI</h1>
+            <p class="subtitle">Deep Learning Hybrid Model (1D-CNN + LSTM) for ECG Arrhythmia Detection</p>
+            <div class="hero-actions">
+                <a class="btn primary" href="/techniques">Explore Project</a>
+                <a class="btn ghost" href="/public/report_sample.pdf" download>Download Report</a>
+            </div>
+        </div>
+        <div class="hero-waveform">
+            <svg id="wave-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+                <path id="wave-path"
+                    d="M0 100 C 80 20, 160 180, 240 100 S 400 20, 480 100 S 640 180, 720 100 S 800 20, 880 100"
+                    fill="none" stroke="#00d1ff" stroke-width="3" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="quick-stats">
+        <div class="card">
+            <h3>Model</h3>
+            <p>1D-CNN + LSTM Hybrid</p>
+        </div>
+        <div class="card">
+            <h3>Dataset</h3>
+            <p>ECG public datasets (e.g., MIT-BIH)</p>
+        </div>
+        <div class="card">
+            <h3>Preprocessing</h3>
+            <p>Wavelet transform, filtering, normalization</p>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
